@@ -1,0 +1,32 @@
+MODEL:
+  WEIGHTS: "detectron2://ImageNetPretrained/MSRA/R-50.pkl"
+  META_ARCHITECTURE: "KepSalinst"
+  MASK_ON: True
+  BACKBONE:
+    NAME: "build_fcos_resnet_fpn_backbone"
+  RESNETS:
+    DEPTH: 50
+    OUT_FEATURES: ["res3", "res4", "res5"]
+  FPN:
+    IN_FEATURES: ["res3", "res4", "res5"]
+  PROPOSAL_GENERATOR:
+    NAME: "FCOS"
+  FCOS:
+    NUM_CLASSES: 1
+    THRESH_WITH_CTR: True
+    USE_SCALE: True
+  KEPSALINST:
+    SAL_MAP_ON: True
+    MAX_PROPOSALS: 500
+    MASK_BRANCH:
+      NUM_CONVS: 4
+    MASK_HEAD:
+      OUTER_MAP_NUM_LAYERS: 2
+      OUTER_MAP_KERNEL_SIZE: 1
+      OUTER_MAP_DILATION: 1
+      CENTER_MAP_NUM_LAYERS: 3
+      CENTER_MAP_KERNEL_SIZE: 1
+      CENTER_MAP_DILATION: 1
+      EXTREME_MAP_NUM_LAYERS: 3
+      EXTREME_MAP_KERNEL_SIZE: 1
+      EXTREME_MAP_DILATION: 1

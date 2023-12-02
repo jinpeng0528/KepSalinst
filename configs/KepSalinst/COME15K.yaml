@@ -1,0 +1,19 @@
+_BASE_: "Base-KepSalinst-R50.yaml"
+INPUT:
+  MAX_SIZE_TRAIN: 480
+  MIN_SIZE_TRAIN: (320, )
+  MAX_SIZE_TEST: 480
+  MIN_SIZE_TEST: 320
+DATASETS:
+  TRAIN: ("COME_train",)
+  TEST: ("COME_e", )
+#  TEST: ("COME_h", )
+SOLVER:
+  IMS_PER_BATCH: 16
+  BASE_LR: 0.01
+  WARMUP_FACTOR: 0.01
+  WARMUP_ITERS: 1000
+  STEPS: (6019, ) # ~ 12 epoches
+  MAX_ITER: 7022 # ~ 14 epoches
+  CHECKPOINT_PERIOD: 1000
+OUTPUT_DIR: "output/KepSalinst/COME15K"
