@@ -29,7 +29,7 @@ pip install -r requirements.txt
 ## Getting Started
 
 ### Datasets
-To meet Detectron2's specifications, our project employs COCO-style annotated datasets. There are two ways to acquire these: Firstly, download the raw datasets from official sources and manually create COCO-style annotations. Alternatively, for ease, we offer pre-annotated datasets in COCO format, available for download from [Google Drive](https://drive.google.com/drive/folders/1rpISYe_PI7uDuv2gRHgANqslXXCxEiy5?usp=sharing) or [Baidu Netdisk](https://pan.baidu.com/s/1J6cjC91Q6Fzbn3kOt5GzYA) (code: `wub4`). Notably, the ILSO-1K dataset annotations are sourced from [RDPNet](https://github.com/yuhuan-wu/RDPNet/tree/master), while we generated annotations for the remaining datasets ourselves.
+To meet Detectron2's specifications, our project employs COCO-style annotated datasets. There are two ways to acquire these: Firstly, download the raw datasets from official sources and manually create COCO-style annotations. Alternatively, for ease, we offer pre-annotated datasets in COCO format, available for download from [OneDrive](https://1drv.ms/f/c/7be8ecfc440137f7/Eggvtb4P1FNLgw47hpu7168Bmr8bFly70xdZKPBYnRtJWQ?e=gbxbIF) or [Baidu Netdisk](https://pan.baidu.com/s/1J6cjC91Q6Fzbn3kOt5GzYA) (code: `wub4`). Notably, the ILSO-1K dataset annotations are sourced from [RDPNet](https://github.com/yuhuan-wu/RDPNet/tree/master), while we generated annotations for the remaining datasets ourselves.
 
 After acquiring the datasets, place them in the `./SIS_datasets/` directory. Alternatively, you can create a symbolic link from the directory containing the datasets to "./SIS_datasets/".
 
@@ -45,7 +45,7 @@ To evaluate after training, run:
 ```bash
 python test.py --config-file configs/KepSalinst/{dataset}.yaml
 ```
-Or, download our trained models from [Google Drive](https://drive.google.com/drive/folders/1wIw_ouNzCNtAISUfgd1sxtXGzXV9T2lX?usp=share_link) or [Baidu Netdisk](https://pan.baidu.com/s/1OCjs_AxFfvNcN0C0gZUMOg) (code: `swbr`). Then, use the following command for evaluation:
+Or, download our trained models from [OneDrive](https://1drv.ms/f/c/7be8ecfc440137f7/EnP0CJ3lR4VOhz-WhZyToeMBP6WKP868NjbWjVSSDpC55A?e=RFIZpk) or [Baidu Netdisk](https://pan.baidu.com/s/1OCjs_AxFfvNcN0C0gZUMOg) (code: `swbr`). Then, use the following command for evaluation:
 ```bash
 python test.py --config-file configs/KepSalinst/{dataset}.yaml MODEL.WEIGHTS {path to model}
 ```
